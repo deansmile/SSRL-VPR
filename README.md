@@ -72,7 +72,7 @@ pip install timm==0.3.2
 
 Now, the environment is set up. enter `exit` twice to exit the singularity and end the interactive job.
 
-## 2.Download
+## 2.Download & Prepare for experiments
 Download the code:
 ```
 cd /scratch/$USER
@@ -92,7 +92,7 @@ password: Yy201023!
 ```
 
 ## 3. Run experiments
-1. Edit the content after "python" on line 16 in test.SBATCH
+1. **Do not run python files directly in the terminal. Edit the content after "python" on line 16 in test.SBATCH and submit the job.**
 2. Submit job:
    ```
    cd /scratch/$USER/SSRL-VPR
@@ -104,10 +104,17 @@ password: Yy201023!
    ```
 4. If your job is running (R), console output of your job will be in a slurm-***.out file. Refresh your explorer to check the output.
 
+### Preparation
+Edit sub/netvlad_mat.py, mae-NetVLAD/main.py, mae-NetVLAD/pittsburgh.py, mae-NetVLAD/mae_tl.py, pytorch-NetVLAD/pittsburgh.py, pytorch-NetVLAD/main.py: Search for "ds5725" and replace all "ds5725" with your netid. 
+
+Then run netvlad_mat.py to generate mat files for NetVLAD input.
+```
+python sub/netvlad_mat.py
+```
+
 ### CNN-NetVLAD
 Make sure you delete the folder checkpoints in pytorch-NetVlad before running new experiment.
 
-Edit the content after "python" on line 16 in test.SBATCH to the following:
 #### Cluster
 ```
 python pytorch-NetVlad/main.py --mode=cluster --pooling=netvlad --num_clusters=64
@@ -126,7 +133,6 @@ Make sure you delete the folder checkpoints in mae-NetVlad before running new ex
 
 To fix weight of the pretrained model, uncomment line 411-413 in mae-NetVlad/main.py.
 
-Edit the content after "python" on line 16 in test.SBATCH to the following:
 #### Cluster
 ```
 python mae-NetVlad/main.py --mode=cluster --pooling=netvlad --num_clusters=64

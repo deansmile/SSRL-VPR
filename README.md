@@ -1,6 +1,6 @@
 # SSRL-VPR
 
-## 1. Setting up the environment
+## 1. Set up the environment
 [HPC application form link](https://www.nyu.edu/life/information-technology/research-computing-services/high-performance-computing/high-performance-computing-nyu-it/hpc-accounts-and-eligibility.html)
 
 Using VSCode with Remote Development Extension is recommended, which enables you to conveniently edit code on the HPC server. If you want to use VSCode, then you need to connect to [NYU-VPN](https://nyu.service-now.com/sp?id=search&spa=1&q=vpnmfa) everytime before you login to HPC. After connected to NYU-VPN, open VSCode and press F1. Search for Remote-SSH: Connect to Host. Enter your_netid@greene.hpc.nyu.edu and your password to login.
@@ -72,7 +72,7 @@ pip install timm==0.3.2
 
 Now, the environment is set up. enter `exit` twice to exit the singularity and end the interactive job.
 
-## 2.Download & Prepare for experiments
+## 2.Download
 Download the code:
 ```
 cd /scratch/$USER
@@ -91,7 +91,7 @@ scp deansheng@128.122.136.119:/home/deansheng/mae_visualize_vit_large_ganloss.pt
 password: Yy201023!
 ```
 
-## 3. Run experiments
+## 3. Prepare & Run experiments
 1. **Do not run python files directly in the terminal. Edit the content after "python" on line 16 in test.SBATCH and submit the job.**
 2. Submit job:
    ```

@@ -6,7 +6,7 @@ class maeTL(MaskedAutoencoderViT):
     def __init__(self):
         super().__init__()
         arch='mae_vit_large_patch16'
-        chkpt_dir = '/scratch/ds5725/ssl_vpr/mae-NetVlad/mae_visualize_vit_large_ganloss.pth'
+        chkpt_dir = '/scratch/bh2470/ssl_vpr/mae-NetVlad/mae_visualize_vit_large_ganloss.pth'
         backbone = getattr(models_mae, arch)()
         checkpoint = torch.load(chkpt_dir, map_location='cpu')
         msg = backbone.load_state_dict(checkpoint['model'], strict=False)

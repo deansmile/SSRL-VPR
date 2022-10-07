@@ -12,7 +12,7 @@ from PIL import Image
 from sklearn.neighbors import NearestNeighbors
 import h5py
 
-struct_dir = '/scratch/ds5725/ssl_vpr/sub/'
+struct_dir = '/scratch/bh2470/SSRL-VPR/sub/'
 
 def input_transform():
     return transforms.Compose([

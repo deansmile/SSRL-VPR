@@ -63,11 +63,28 @@ conda activate habitat
 ```
 Install packages:
 ```
-pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 \
--f https://download.pytorch.org/whl/torch_stable.html
+pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 \
+-f https://download.pytorch.org/whl/torch_stable.html --no-cache-dir
 pip install faiss-cpu --no-cache
 pip install h5py numpy scikit-learn tensorboardX scipy
 pip install timm==0.3.2
+conda install -c vissl apex
+```
+Install vissl:
+```
+git clone --recursive https://github.com/facebookresearch/vissl.git
+cd vissl
+git checkout v0.1.6
+git checkout -b v0.1.6
+pip install --progress-bar off -r requirements.txt
+pip install opencv-python
+pip uninstall -y classy_vision
+pip install classy-vision@https://github.com/facebookresearch/ClassyVision/tarball/4785d5ee19d3bcedd5b28c1eb51ea1f59188b54d
+pip uninstall -y fairscale
+pip install fairscale==0.4.6
+pip install -e ".[dev]"
+# verify installation
+python -c 'import vissl, apex'
 ```
 
 Now, the environment is set up. enter `exit` twice to exit the singularity and end the interactive job.
@@ -144,4 +161,21 @@ python mae-NetVlad/main.py --mode=train --pooling=netvlad --num_clusters=64
 #### Test
 ```
 python mae-NetVlad/main.py --mode=test
+```
+
+### VISSL-NetVLAD
+Make sure you delete the folder checkpoints in mae-NetVlad before running new experiment.
+To change SSRL method used, modify line 27, 63-64, 406-408.
+
+#### Cluster
+```
+python vissl-NetVlad/main.py --mode=cluster --pooling=netvlad --num_clusters=64
+```
+#### Train
+```
+python vissl-NetVlad/main.py --mode=train --pooling=netvlad --num_clusters=64
+```
+#### Test
+```
+python vissl-NetVlad/main.py --mode=test
 ```

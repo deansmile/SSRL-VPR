@@ -1,0 +1,36 @@
+** fvcore version of PathManager will be deprecated soon. **
+** Please migrate to the version in iopath repo. **
+https://github.com/facebookresearch/iopath 
+
+WARNING:root:Torch AMP is not available on this platform
+Namespace(arch='deepcluster', batchSize=4, cacheBatchSize=24, cachePath='/state/partition1/job-26399392', cacheRefreshRate=1000, ckpt='latest', dataPath='/home/ds5725/vissl-NetVlad/data', dataset='pittsburgh', evalEvery=1, fromscratch=False, lr=0.0001, lrGamma=0.5, lrStep=5, margin=0.1, mode='cluster', momentum=0.9, nEpochs=30, nGPU=1, nocuda=False, num_clusters=64, optim='SGD', patience=10, pooling='netvlad', resume='', runsPath='/home/ds5725/vissl-NetVlad/runs', savePath='/home/ds5725/vissl-NetVlad/checkpoints', seed=123, split='test', start_epoch=0, threads=8, vladv2=False, weightDecay=0.001)
+===> Loading dataset(s)
+===> Building model
+===> Calculating descriptors and clusters
+====> Extracting Descriptors
+/ext3/miniconda3/envs/habitat/lib/python3.7/site-packages/torch/utils/data/dataloader.py:477: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([24, 300, 2048])
+torch.Size([20, 300, 2048])
+====> Clustering..
+====> Storing centroids (64, 2048)
+====> Done!

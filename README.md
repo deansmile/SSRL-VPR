@@ -60,7 +60,6 @@ Create a new conda environment for habitat:
 ```
 conda create -n habitat python=3.7 cmake=3.14.0 -y
 conda activate habitat
-
 ```
 Install packages:
 ```

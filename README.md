@@ -60,16 +60,17 @@ Create a new conda environment for habitat:
 ```
 conda create -n habitat python=3.7 cmake=3.14.0 -y
 conda activate habitat
-conda uninstall pytorch
+
 ```
 Install packages:
 ```
+conda install -c vissl apex
+conda uninstall pytorch
 pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 \
 -f https://download.pytorch.org/whl/torch_stable.html --no-cache-dir
 pip install faiss-cpu --no-cache
 pip install h5py numpy scikit-learn tensorboardX scipy
 pip install timm==0.3.2
-conda install -c vissl apex
 ```
 Install vissl:
 ```

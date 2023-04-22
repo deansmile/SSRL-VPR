@@ -9,7 +9,7 @@ Login to the Greene cluster your_netid@greene.hpc.nyu.edu
 
 For faster installation, we want to use the computation node by running an interactivate job.
 ```
-srun -t30:00 -c4 --mem=3000 --pty /bin/bash
+srun -t120:00 -c4 --mem=3000 --pty /bin/bash
 ```
 Create a directory for the environment.
 ```

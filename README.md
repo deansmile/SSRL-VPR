@@ -18,9 +18,9 @@ cd /scratch/$USER/environments
 ```
 Copy the overlay images to the directory and unzip it (here we use the image that has 15GB spaces and can hold 500k files). Then rename the image
 ```
-cp -rp /scratch/work/public/overlay-fs-ext3/overlay-15GB-500K.ext3.gz .
-gunzip overlay-15GB-500K.ext3.gz
-mv overlay-15GB-500K.ext3 habitat.ext3
+cp -rp /scratch/work/public/overlay-fs-ext3/overlay-50G-10M.ext3.gz .
+gunzip overlay-50G-10M.ext3.gz
+mv overlay-50G-10M.ext3 habitat.ext3
 ```
 Launch the Singularity container in read/write mode (with the :rw flag). 
 ```
